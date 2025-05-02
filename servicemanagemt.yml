@@ -1,19 +1,21 @@
 ---
- - name: Enable and disable services
-   hosts: all
-   roles:
-    - servicemgt
-   tasks:
-    - name: enable service
-      ansible.builtin.service:
-       name: "{{ item }}"
-       state: enabled
-      with_items:
-       - "{{ enable_service }}"
+- name: Enable and disable services
+  hosts: all
+  roles:
+   - servicemgt
+  tasks:
+   - name: Enable services
+     ansible.builtin.service:
+      name: "{{ item }}"
+      enabled: yes
+      state: started
+     with_items:
+      - "{{ enable_services }}"
 
-    - name: disable service
-      ansible.builtin.service:
-       name: "{{ item }}"
-       state: disabled
-      with_items:
-       - "{{ disable_service }}"
+   - name: Disable services
+     ansible.builtin.service:
+      name: "{{ item }}"
+      enabled: no
+      state: stopped
+     with_items:
+      - "{{ disable_services }}"

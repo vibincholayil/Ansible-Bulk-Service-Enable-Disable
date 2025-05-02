@@ -3,5 +3,5 @@
 # tasks file for servicemgt
 #
 - name: Manage Service
-  hosts: all
-   - servicemgt
+  debug: 
+   msg: "check servicemgt package in enabled and disabled"

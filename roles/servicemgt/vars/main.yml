@@ -1,0 +1,9 @@
+---
+enable_services:
+ - sshd
+ - crond
+ - firewalld
+
+disable_services:
+ - bluetooth
+ - avahi-daemon
