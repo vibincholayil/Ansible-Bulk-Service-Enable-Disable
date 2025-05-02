@@ -1,0 +1,12 @@
+#SPDX-License-Identifier: MIT-0
+---
+# vars file for servicemgt
+#
+enable_service:
+ - sshd
+ - crond
+ - firewalld
+
+disable_service:
+ - bluetooth
+ - avahi-daemon
